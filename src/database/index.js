@@ -69,7 +69,21 @@ const getListOfAgesOfUsersWith = (item) => {
   return mockDBCall(dataAccessMethod);
 };
 
+const getListOfItem = () => {
+  const dataAccessMethod = () => {
+    let itemSet = new Set();
+    for (let user in db.itemsOfUserByUsername) {
+      for (let item of db.itemsOfUserByUsername[user]) {
+        itemSet.add(item);
+      }
+    }
+    return Array.from(itemSet);
+  };
+  return mockDBCall(dataAccessMethod);
+};
+
 module.exports = {
   getUsers,
   getListOfAgesOfUsersWith,
+  getListOfItem,
 };
