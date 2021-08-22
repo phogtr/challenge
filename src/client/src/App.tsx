@@ -18,11 +18,12 @@ export interface IAgeCount {
 const App = () => {
   const [isDataLoading, setIsDataLoading] = useState(true);
   const [userInfo, setUserInfo] = useState<IUserInfo[]>();
-  const [itemArray, setItemArray] = useState<string[]>();
-  const [ageCountArray, setAgeCountArray] = useState<IAgeCount[]>();
 
   const [selectItem, setSelectItem] = useState("Item");
+  const [itemArray, setItemArray] = useState<string[]>();
+
   const [isAgeCountLoading, setIsAgeCountLoading] = useState(true);
+  const [ageCountArray, setAgeCountArray] = useState<IAgeCount[]>();
 
   useEffect(() => {
     setIsDataLoading(true);
@@ -45,7 +46,6 @@ const App = () => {
     getListOfAgesOfUsersWith(item).then((data) => {
       setAgeCountArray(data);
       setIsAgeCountLoading(false);
-      console.log(item);
     });
   };
 
