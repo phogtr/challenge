@@ -7,8 +7,9 @@ const getListOfAgesOfUsersWithHandler = async (request, response) => {
     const itemToLookup = request.params.item;
     const data = await mockDBCalls.getListOfAgesOfUsersWith(itemToLookup);
     return response.status(200).send(JSON.stringify(data));
-  } catch {
-    console.log(error);
+  } catch (err) {
+    // console.log(err);
+    return response.status(500).send({ error: "Unexpected Error from Internal Server" });
   }
 };
 
