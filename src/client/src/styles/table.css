@@ -1,0 +1,16 @@
+.table__container {
+  width: 100%;
+}
+
+.table__header {
+  padding: 1rem 0;
+}
+
+.table__data {
+  padding: 1rem 0;
+  border-top: 1px solid lightgray;
+}
+
+.table--left-align {
+  text-align: left;
+}

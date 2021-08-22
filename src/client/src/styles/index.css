@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
-h1 {
-  color: red;
+.app__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.section__container {
+  width: 50%;
 }
