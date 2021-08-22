@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .app__container {
   display: flex;
   align-items: center;
@@ -13,4 +17,8 @@
 
 .section__container {
   width: 50%;
+}
+
+.loading-message {
+  padding-top: 2rem;
 }

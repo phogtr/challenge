@@ -1,5 +1,6 @@
 import React, { BaseSyntheticEvent } from "react";
 import { IAgeCount } from "../../App";
+import "../../styles/dropdown.css";
 import "../../styles/header.css";
 import "../../styles/table.css";
 
@@ -37,28 +38,29 @@ export const AgeCountTable: React.FC<IAgeCountTableProps> = ({
       </div>
 
       {isAgeCountLoading === true && selectItem !== "Item" ? (
-        <div>
+        <div className="loading-message">
           <h1>Loading data, please wait...</h1>
         </div>
       ) : (
         <>
-          {ageCountArray && (
-            <table className={"table__container"}>
-              <tbody>
-                <tr>
-                  <th className={"table__header table--left-align"}>Age</th>
-                  <th className={"table__header table--left-align"}>Count</th>
-                </tr>
-
-                {ageCountArray.map((ageCount) => (
-                  <tr key={ageCount.age}>
-                    <td className={"table__data table--left-align"}>{ageCount.age}</td>
-                    <td className={"table__data table--left-align"}>{ageCount.count}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
+          <table className={"table__container"}>
+            <tbody>
+              <tr>
+                <th className={"table__header table--left-align"}>Age</th>
+                <th className={"table__header table--left-align"}>Count</th>
+              </tr>
+              {ageCountArray && (
+                <>
+                  {ageCountArray.map((ageCount) => (
+                    <tr key={ageCount.age}>
+                      <td className={"table__data table--left-align"}>{ageCount.age}</td>
+                      <td className={"table__data table--left-align"}>{ageCount.count}</td>
+                    </tr>
+                  ))}
+                </>
+              )}
+            </tbody>
+          </table>
         </>
       )}
     </section>

@@ -53,7 +53,7 @@ const App = () => {
     <main className="app__container">
       <Header />
       {isDataLoading === true ? (
-        <div>
+        <div className="loading-message">
           <h1>Loading data, please wait...</h1>
         </div>
       ) : (

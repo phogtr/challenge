@@ -1,0 +1,14 @@
+.select-item__dropdown select {
+  color: white;
+  background-color: hsl(210, 100%, 40%);
+  width: 13%;
+  height: 40px;
+  padding: 3px 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.select-item__dropdown option {
+  color: black;
+  background-color: white;
+}
